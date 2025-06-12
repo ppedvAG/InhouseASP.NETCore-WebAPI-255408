@@ -20,7 +20,7 @@ KursRepository zu Kurs ASP.NET Core Web API - RESTful Webservices mit C# der ppe
 
 ## Modul 003 Services & Controllers
 
--	[ ] BusinessLogic Class Library Project erstellt
+-	[x] BusinessLogic Class Library Project erstellt
 	- Service und Domain Model
 	- Contracts
 -	[ ] Controller mit CRUD Operationen

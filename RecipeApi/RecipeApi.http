@@ -1,0 +1,94 @@
+@RecipeApi_HostAddress = http://localhost:5080
+
+### Alle Rezepte abrufen
+GET {{RecipeApi_HostAddress}}/api/recipes
+Accept: application/json
+
+### Einzelnes Rezept abrufen als CSV
+GET {{RecipeApi_HostAddress}}/api/recipes
+Accept: text/csv
+
+
+### Einzelnes Rezept abrufen (z.B. mit Id = 1)
+GET {{RecipeApi_HostAddress}}/api/recipes/1
+Accept: application/json
+
+### Einzelnes Rezept abrufen als XML
+GET {{RecipeApi_HostAddress}}/api/recipes/1
+Accept: application/xml
+### Neues Rezept anlegen
+POST {{RecipeApi_HostAddress}}/api/recipes
+Content-Type: application/json
+
+{
+  "name": "Spaghetti Carbonara",
+  "ingredients": [
+    "200g Spaghetti",
+    "100g Speck",
+    "2 Eier",
+    "50g Parmesan",
+    "Salz",
+    "Pfeffer"
+  ],
+  "instructions": [
+    "Spaghetti kochen.",
+    "Speck anbraten.",
+    "Eier und Parmesan vermengen.",
+    "Spaghetti abgießen und mit Speck und Ei-Parmesan-Mischung vermengen.",
+    "Mit Salz und Pfeffer abschmecken."
+  ],
+  "prepTimeMinutes": 10,
+  "cookTimeMinutes": 15,
+  "servings": 2,
+  "difficulty": "Medium",
+  "cuisine": "Italian",
+  "caloriesPerServing": 600,
+  "tags": ["Pasta", "Italian", "Quick"],
+  "userId": 1,
+  "imageUrl": "https://example.com/carbonara.jpg",
+  "rating": 4.5,
+  "reviewCount": 12,
+  "mealType": ["Dinner", "Lunch"]
+}
+
+### Rezept aktualisieren (z.B. mit Id = 1)
+PUT {{RecipeApi_HostAddress}}/api/recipes/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Spaghetti Carbonara Deluxe",
+  "ingredients": [
+    "200g Spaghetti",
+    "150g Pancetta",
+    "2 Eier",
+    "50g Parmesan",
+    "Salz",
+    "Pfeffer",
+    "Petersilie"
+  ],
+  "instructions": [
+    "Spaghetti kochen.",
+    "Pancetta anbraten.",
+    "Eier und Parmesan vermengen.",
+    "Spaghetti abgießen und mit Pancetta und Ei-Parmesan-Mischung vermengen.",
+    "Mit Salz, Pfeffer und Petersilie abschmecken."
+  ],
+  "prepTimeMinutes": 12,
+  "cookTimeMinutes": 15,
+  "servings": 2,
+  "difficulty": "Medium",
+  "cuisine": "Italian",
+  "caloriesPerServing": 650,
+  "tags": ["Pasta", "Italian", "Deluxe"],
+  "userId": 1,
+  "imageUrl": "https://example.com/carbonara-deluxe.jpg",
+  "rating": 4.7,
+  "reviewCount": 15,
+  "mealType": ["Dinner", "Lunch"]
+}
+
+### Rezept löschen (z.B. mit Id = 1)
+DELETE {{RecipeApi_HostAddress}}/api/recipes/1
+
+###
