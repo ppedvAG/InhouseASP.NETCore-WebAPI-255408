@@ -1,23 +1,33 @@
-using Lab002_DependencyInjection.Services;
-using Microsoft.AspNetCore.Mvc;
+using LabDependencyInjection.Services;
 
-namespace LabDependencyInjection
+namespace LabDependencyInjection;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddSingleton<IOperationSingleton, OperationService>();
-            builder.Services.AddScoped<IOperationScoped, OperationService>();
-            builder.Services.AddTransient<IOperationTransient, OperationService>();
-            builder.Services.AddControllers();
+        var builder = RegisterTypes(args);
 
-            var app = builder.Build();
+        // Frueher gab es eine separate Startup-Klasse
+        // Die Logik sollte mindestens in einer eigenen Methode erfolgen
+        Startup(builder.Build());
+    }
 
-            app.MapControllerRoute("default", "{controller=Test}");
+    private static WebApplicationBuilder RegisterTypes(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-            app.Run();
-        }
+        builder.Services
+            .AddOperationServices()
+            .AddControllers();
+
+        return builder;
+    }
+
+    private static void Startup(WebApplication app)
+    {
+        app.MapControllerRoute("default", "{controller=Test}");
+
+        app.Run();
     }
 }
