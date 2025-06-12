@@ -4,9 +4,10 @@ KursRepository zu Kurs ASP.NET Core Web API - RESTful Webservices mit C# der ppe
 
 ## Modul 001 Einführung WebAPI
 
--	[ ] WheaterForecastAPI erstellt
--	[ ] Projektstruktur erklärt
--	[ ] [httpFiles](https://learn.microsoft.com/en-us/aspnet/core/test/http-files)
+-	[x] ASP.NET Core Empty: Hello World
+-	[x] WheaterForecastAPI erstellt
+-	[x] Projektstruktur erklärt
+-	[x] [httpFiles](https://learn.microsoft.com/en-us/aspnet/core/test/http-files)
 
 ## Modul 002 Konfiguration
 
