@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeApi", "RecipeApi\Reci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabMovieStore", "LabMovieStore\LabMovieStore.csproj", "{B16D0E78-235E-47E7-929D-C51053377955}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabMovieApi", "LabMovieApi\LabMovieApi.csproj", "{B8985BA2-8610-B18A-42AB-3325B732AE87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{B16D0E78-235E-47E7-929D-C51053377955}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B16D0E78-235E-47E7-929D-C51053377955}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B16D0E78-235E-47E7-929D-C51053377955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8985BA2-8610-B18A-42AB-3325B732AE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8985BA2-8610-B18A-42AB-3325B732AE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8985BA2-8610-B18A-42AB-3325B732AE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8985BA2-8610-B18A-42AB-3325B732AE87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{CAF904AB-CF13-4FE3-90FD-565C4F150C6B} = {2DB77500-6529-4E15-9E9D-EDC366C1513F}
 		{26C961B4-86F1-4FC2-96C3-D0BBED21888E} = {45F3B9D6-AD31-4960-A106-6CC463FF4203}
 		{B16D0E78-235E-47E7-929D-C51053377955} = {2DB77500-6529-4E15-9E9D-EDC366C1513F}
+		{B8985BA2-8610-B18A-42AB-3325B732AE87} = {45F3B9D6-AD31-4960-A106-6CC463FF4203}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B30CC79-2AB1-410B-BF3F-31B27BF8000C}

@@ -64,9 +64,11 @@ namespace MovieStore.Services
             _movies.Add(movie);
         }
 
-        public void RemoveMovie(Movie movie)
+        public void RemoveMovie(int id)
         {
-            _movies.Remove(movie);
+            var movie = _movies.SingleOrDefault(m => m.Id == id);
+            if (movie != null)
+                _movies.Remove(movie);
         }
     }
 }

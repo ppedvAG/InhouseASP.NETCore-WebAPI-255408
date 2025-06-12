@@ -23,12 +23,12 @@ KursRepository zu Kurs ASP.NET Core Web API - RESTful Webservices mit C# der ppe
 -	[x] BusinessLogic Class Library Project erstellt
 	- Service und Domain Model
 	- Contracts
--	[ ] Controller mit CRUD Operationen
+-	[x] Controller mit CRUD Operationen
 	- Route constraints
 	- [Model Binding](https://learn.microsoft.com/en-us/aspnet/web-api/overview/formats-and-model-binding/)
--	[ ] Best Practices: DTOs, Mapper
+-	[x] Best Practices: DTOs, Mapper
 -	[ ] ModelState & Validation Attributes
--	[ ] LAB: Movie Store Api
+-	[x] LAB: Movie Store Api
 
 ## M004 | Model View Controller (MVC)
 
