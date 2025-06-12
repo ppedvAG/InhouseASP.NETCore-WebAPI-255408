@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M001_Vorstellung", "M001_Vo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherForecastApi", "WeatherForecastApi\WeatherForecastApi.csproj", "{0CA096FB-5365-4489-AD80-D750DBAC3B5D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "M002_Konfiguration", "M002_Konfiguration", "{6E0EE151-0A4A-48D1-834F-ADF072DC40CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDependencyInjection", "HelloDependencyInjection\HelloDependencyInjection.csproj", "{C0A2BB31-6A08-42CB-9AE3-A8875494FDF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,10 @@ Global
 		{0CA096FB-5365-4489-AD80-D750DBAC3B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CA096FB-5365-4489-AD80-D750DBAC3B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CA096FB-5365-4489-AD80-D750DBAC3B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0A2BB31-6A08-42CB-9AE3-A8875494FDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A2BB31-6A08-42CB-9AE3-A8875494FDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A2BB31-6A08-42CB-9AE3-A8875494FDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A2BB31-6A08-42CB-9AE3-A8875494FDF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -33,6 +41,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{88DD1CD2-32E5-42A7-8FEE-949EA6FCC20A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{0CA096FB-5365-4489-AD80-D750DBAC3B5D} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C0A2BB31-6A08-42CB-9AE3-A8875494FDF1} = {6E0EE151-0A4A-48D1-834F-ADF072DC40CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B30CC79-2AB1-410B-BF3F-31B27BF8000C}
