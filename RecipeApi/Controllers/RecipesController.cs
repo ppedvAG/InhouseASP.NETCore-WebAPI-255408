@@ -7,7 +7,7 @@ using RecipeApi.Mappers;
 
 namespace RecipeApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class RecipesController : ControllerBase
     {
@@ -46,6 +46,13 @@ namespace RecipeApi.Controllers
             {
                 var result = _recipeService.Add(dto.ToDomainModel());
                 return Ok(result);
+            }
+            // Best Practice: Nicht den Basistyp Exception abfangen sondern
+            // spezifische Exception Types
+            catch (HttpIOException ex) when (ex.Source == "file")
+            {
+                // 500 Internal Server Error
+                return new StatusCodeResult(500);
             }
             catch (Exception)
             {

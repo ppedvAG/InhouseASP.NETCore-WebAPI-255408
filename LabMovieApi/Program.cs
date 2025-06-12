@@ -24,6 +24,11 @@ namespace LabMovieApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddExceptionHandler(options =>
+            {
+                // Hier kann das Verhalten des ExceptionHandlers global konfigurieren
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

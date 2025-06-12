@@ -1,23 +1,23 @@
-@RecipeApi_HostAddress = http://localhost:5080
+@RecipeApi_HostAddress = http://localhost:5080/api/v1
 
 ### Alle Rezepte abrufen
-GET {{RecipeApi_HostAddress}}/api/recipes
+GET {{RecipeApi_HostAddress}}/recipes
 Accept: application/json
 
 ### Einzelnes Rezept abrufen als CSV
-GET {{RecipeApi_HostAddress}}/api/recipes
+GET {{RecipeApi_HostAddress}}/recipes
 Accept: text/csv
 
 
 ### Einzelnes Rezept abrufen (z.B. mit Id = 1)
-GET {{RecipeApi_HostAddress}}/api/recipes/1
+GET {{RecipeApi_HostAddress}}/recipes/1
 Accept: application/json
 
 ### Einzelnes Rezept abrufen als XML
-GET {{RecipeApi_HostAddress}}/api/recipes/1
+GET {{RecipeApi_HostAddress}}/recipes/1
 Accept: application/xml
 ### Neues Rezept anlegen
-POST {{RecipeApi_HostAddress}}/api/recipes
+POST {{RecipeApi_HostAddress}}/recipes
 Content-Type: application/json
 
 {
@@ -52,7 +52,7 @@ Content-Type: application/json
 }
 
 ### Rezept aktualisieren (z.B. mit Id = 1)
-PUT {{RecipeApi_HostAddress}}/api/recipes/1
+PUT {{RecipeApi_HostAddress}}/recipes/1
 Content-Type: application/json
 
 {
@@ -89,6 +89,6 @@ Content-Type: application/json
 }
 
 ### Rezept löschen (z.B. mit Id = 1)
-DELETE {{RecipeApi_HostAddress}}/api/recipes/1
+DELETE {{RecipeApi_HostAddress}}/recipes/1
 
 ###
