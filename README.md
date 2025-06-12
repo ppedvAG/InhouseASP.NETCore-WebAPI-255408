@@ -11,7 +11,7 @@ KursRepository zu Kurs ASP.NET Core Web API - RESTful Webservices mit C# der ppe
 
 ## Modul 002 Konfiguration
 
--	[ ] IOC mittels Dependency Injection
+-	[x] IOC mittels Dependency Injection
 	- ServiceCollection
 	- Dependency Tree
 -	[ ] Logging in ASP.Net Core
