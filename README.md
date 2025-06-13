@@ -26,24 +26,20 @@ KursRepository zu Kurs ASP.NET Core Web API - RESTful Webservices mit C# der ppe
 -	[x] Controller mit CRUD Operationen
 	- Route constraints
 	- [Model Binding](https://learn.microsoft.com/en-us/aspnet/web-api/overview/formats-and-model-binding/)
--	[x] Best Practices: DTOs, Mapper
--	[ ] ModelState & Validation Attributes
 -	[x] LAB: Movie Store Api
 
-## M004 | Model View Controller (MVC)
+## Modul 004 MediaTypes & Dto Mapping
 
--   [ ] Overview
--   [ ] Links setzen
--   [ ] Index und Details
--   [ ] ViewModel Mapping
--   [ ] Form Post & Validierung
--   [ ] ModelState
--   [ ] Lab: MovieService und MVC App mit Index und Details
+-	[x] MediaTypes & [Formatters](https://learn.microsoft.com/en-us/aspnet/web-api/overview/formats-and-model-binding/media-formatters)
+	- ActionResults als JSON, XML und CSV
+-	[x] Best Practices: DTOs, Mapper
+-	[x] ModelState & Validation Attributes
+-	[ ] LAB: Movie Store Refactoring
 
 
 ## Modul 005 EF Core, Async/Await
 
--	[ ] Code First: VehicleManagement Datenbank
+-	[ ] Code First: Recipe Datenbank
 -	[ ] Datenklasse mit Attriuten versetzt
 -	[ ] DbContext & Seeding
 -	[ ] Abhängigkeiten via DI registriert
@@ -71,11 +67,34 @@ Update-Database
 		* Bestellungen pro Kunde (Parameter: CustomerID)
 		* Kunden pro Land (Parameter: Country)
 
+## Modul 006 Testing
+
+-	[ ] [Überblick Strategien](https://learn.microsoft.com/de-de/ef/core/testing/)
+-	[ ] [Unit Testing Controllers](https://learn.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api)
+-	[ ] Moq benutzen um Controller Dependencies zu mocken
+-	[ ] LocalDB benutzen
+
+## Modul 007 HttpClient
+
+-	[ ] Console App welche Anfragen auf die Northwind API macht
+-	[ ] Response als JSON deserialisieren
+
 ## Modul 008 Authentication
 
 -	[ ] Middleware für Authentication konfigurieren
 -	[ ] IdentityDbContext verwenden
 -	[ ] JwtToken erstellen
+
+-	[ ] Authentication mit Microsoft Identity Platform via Entra (ehem. Azure AD)
+-	[ ] [Client Secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets)
+-	[ ] [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
+
+	
+## Modul 009 OData
+
+-	[ ] OData Abfragen auf VehicleManagement
+-	[ ] LAB: OData Abfragen auf Northwind
+
 
 
 ## Modul 011 Weitere Themen

@@ -1,16 +1,22 @@
 ﻿using BusinessLogic.Models.Enums;
+using RecipeApi.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace BusinessLogic.Models;
 
 public class CreateRecipeDto
 {
-    public string Name { get; set; }
+    [Required(ErrorMessage = "Name is required")]
+    [MinLength(3, ErrorMessage = "Name must be at least 3 characters long")]
+    [MaxLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
+    public required string Name { get; set; }
 
-    public string ImageUrl { get; set; }
+    [ValidImage]
+    public string? ImageUrl { get; set; }
 
-    public string Ingredients { get; set; }
+    public string? Ingredients { get; set; }
 
-    public string Instructions { get; set; }
+    public string? Instructions { get; set; }
 
     public int PrepTimeMinutes { get; set; }
 
@@ -20,9 +26,9 @@ public class CreateRecipeDto
 
     public Difficulty Difficulty { get; set; }
 
-    public string Cuisine { get; set; }
+    public string? Cuisine { get; set; }
 
-    public string MealType { get; set; }
+    public string? MealType { get; set; }
 
     public float Rating { get; set; }
 

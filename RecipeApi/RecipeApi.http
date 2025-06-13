@@ -8,6 +8,13 @@ Accept: application/json
 GET {{RecipeApi_HostAddress}}/recipes
 Accept: text/csv
 
+### Italienische Rezepte abrufen
+GET {{RecipeApi_HostAddress}}/recipes?cuisine=Italian
+Accept: application/json
+
+### Einfache Rezepte abrufen
+GET {{RecipeApi_HostAddress}}/recipes?difficulty=easy
+Accept: application/json
 
 ### Einzelnes Rezept abrufen (z.B. mit Id = 1)
 GET {{RecipeApi_HostAddress}}/recipes/1
@@ -16,6 +23,15 @@ Accept: application/json
 ### Einzelnes Rezept abrufen als XML
 GET {{RecipeApi_HostAddress}}/recipes/1
 Accept: application/xml
+
+### Neues Rezept anlegen (soll Validation Erros ausgeben)
+POST {{RecipeApi_HostAddress}}/recipes
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
 ### Neues Rezept anlegen
 POST {{RecipeApi_HostAddress}}/recipes
 Content-Type: application/json

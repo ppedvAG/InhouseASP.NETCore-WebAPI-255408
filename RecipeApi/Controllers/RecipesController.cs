@@ -7,8 +7,8 @@ using RecipeApi.Mappers;
 
 namespace RecipeApi.Controllers
 {
-    [Route("api/v1/[controller]")]
     [ApiController]
+    [Route("api/v1/[controller]")]
     public class RecipesController : ControllerBase
     {
         private readonly IStaticRecipeService _recipeService;
@@ -20,16 +20,32 @@ namespace RecipeApi.Controllers
 
         // GET: api/<RecipesController>
         [HttpGet]
-        public ActionResult<IEnumerable<Recipe>> Get()
+        public ActionResult<IEnumerable<Recipe>> Get([FromQuery] RecipeSearchParams filterParams)
         {
             var result = _recipeService.GetAll();
 
+            if (filterParams.Difficulty != null)
+            {
+                result = result.Where(x => x.Difficulty.Equals(filterParams.Difficulty));
+            }
+
+            if (!string.IsNullOrEmpty(filterParams.MealType))
+            {
+                result = result.Where(x => x.MealType.Contains(filterParams.MealType));
+            }
+
+            if (!string.IsNullOrEmpty(filterParams.Cuisine))
+            {
+                result = result.Where(x => x.Cuisine.Contains(filterParams.Cuisine));
+            }
+
             // OkResult gibt 200 OK zurück
-            return Ok(result.Select(x => x.ToDto()));
+            return Ok(result.Select(x => x.ToDto()).ToList());
         }
 
         // GET api/<RecipesController>/5
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("{id:long}")]
         public ActionResult<Recipe> Get(long id)
         {
             var result = _recipeService.GetById(id);
@@ -40,10 +56,15 @@ namespace RecipeApi.Controllers
 
         // POST api/<RecipesController>
         [HttpPost]
-        public IActionResult Post([FromBody] CreateRecipeDto dto)
+        public IActionResult Post(CreateRecipeDto dto)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
                 var result = _recipeService.Add(dto.ToDomainModel());
                 return Ok(result);
             }
@@ -62,7 +83,8 @@ namespace RecipeApi.Controllers
         }
 
         // PUT api/<RecipesController>/5
-        [HttpPut("{id}")]
+        [HttpPut]
+        [Route("{id:long}")]
         public IActionResult Put(long id, [FromBody] Recipe value)
         {
             try
@@ -78,7 +100,8 @@ namespace RecipeApi.Controllers
         }
 
         // DELETE api/<RecipesController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
+        [Route("{id:long}")]
         public IActionResult Delete(long id)
         {
             try
