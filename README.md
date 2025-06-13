@@ -44,6 +44,7 @@ KursRepository zu Kurs ASP.NET Core Web API - RESTful Webservices mit C# der ppe
 -	[ ] DbContext & Seeding
 -	[ ] Abhängigkeiten via DI registriert
 -	[ ] Async/Await Pattern
+-   [ ] LocalDB verwenden (Kommandozeile: `sqllocaldb create|start|stop|info <instanceName>`)
 -	[ ] LAB: DB für Movie Store erstellen
 
 ```
