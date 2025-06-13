@@ -15,4 +15,11 @@ public static class SetupExtensions
     /// <returns></returns>
     public static IServiceCollection AddInMemoryServices(this IServiceCollection services)
         => services.AddSingleton<IStaticRecipeService, StaticRecipeService>();
+
+    public static IServiceCollection AddAppServices(this IServiceCollection services)
+    {
+        return services
+            .AddTransient<IOrderService, OrderService>()
+            .AddTransient<IRecipeService, RecipeService>();
+    }
 }

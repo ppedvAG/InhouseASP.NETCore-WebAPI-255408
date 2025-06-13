@@ -11,19 +11,20 @@ namespace RecipeDbApi.Controllers
     [Route("api/v1/[controller]")]
     public class RecipesController : ControllerBase
     {
-        private readonly IStaticRecipeService _recipeService;
+        private readonly IRecipeService _recipeService;
 
-        public RecipesController(IStaticRecipeService recipeService)
+        public RecipesController(IRecipeService recipeService)
         {
             _recipeService = recipeService;
         }
 
         // GET: api/<RecipesController>
         [HttpGet]
-        public ActionResult<IEnumerable<Recipe>> Get([FromQuery] RecipeSearchParams filterParams)
+        public async Task<ActionResult<IEnumerable<Recipe>>> Get([FromQuery] RecipeSearchParams filterParams)
         {
-            var result = _recipeService.GetAll();
+            IEnumerable<Recipe> result = await _recipeService.GetAll();
 
+            // TODO Filterung sollte natuerlich in der BusinessLogic liegen
             if (filterParams.Difficulty != null)
             {
                 result = result.Where(x => x.Difficulty.Equals(filterParams.Difficulty));
@@ -46,9 +47,9 @@ namespace RecipeDbApi.Controllers
         // GET api/<RecipesController>/5
         [HttpGet]
         [Route("{id:long}")]
-        public ActionResult<Recipe> Get(long id)
+        public async Task<ActionResult<Recipe>> Get(long id)
         {
-            var result = _recipeService.GetById(id);
+            var result = await _recipeService.GetById(id);
             return result is null 
                 ? NotFound() // 404
                 : Ok(result.ToDto()); // 200
@@ -56,7 +57,7 @@ namespace RecipeDbApi.Controllers
 
         // POST api/<RecipesController>
         [HttpPost]
-        public IActionResult Post(CreateRecipeDto dto)
+        public async Task<IActionResult> Post(CreateRecipeDto dto)
         {
             try
             {
@@ -65,7 +66,8 @@ namespace RecipeDbApi.Controllers
                     return BadRequest(ModelState);
                 }
 
-                var result = _recipeService.Add(dto.ToDomainModel());
+                var id = await _recipeService.Add(dto.ToDomainModel());
+                var result = await _recipeService.GetById(id);
                 return Ok(result);
             }
             // Best Practice: Nicht den Basistyp Exception abfangen sondern
@@ -85,11 +87,11 @@ namespace RecipeDbApi.Controllers
         // PUT api/<RecipesController>/5
         [HttpPut]
         [Route("{id:long}")]
-        public IActionResult Put(long id, [FromBody] Recipe value)
+        public async Task<IActionResult> Put(long id, [FromBody] Recipe value)
         {
             try
             {
-                var success = _recipeService.Update(value);
+                var success = await _recipeService.Update(value);
                 return success ? NoContent() : NotFound();
             }
             catch (Exception ex)
@@ -102,11 +104,11 @@ namespace RecipeDbApi.Controllers
         // DELETE api/<RecipesController>/5
         [HttpDelete]
         [Route("{id:long}")]
-        public IActionResult Delete(long id)
+        public async Task<IActionResult> Delete(long id)
         {
             try
             {
-                var success = _recipeService.Delete(id);
+                var success = await _recipeService.Delete(id);
                 return success ? NoContent() : NotFound();
             }
             catch (Exception ex)

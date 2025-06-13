@@ -107,4 +107,33 @@ Content-Type: application/json
 ### Rezept löschen (z.B. mit Id = 1)
 DELETE {{RecipeApi_HostAddress}}/recipes/1
 
-###
+### Alle Bestellungen eines Nutzers abrufen
+GET {{RecipeApi_HostAddress}}/orders?userName=Guest
+Accept: application/json
+
+### Einzelne Bestellung abrufen
+GET {{RecipeApi_HostAddress}}/orders/1
+Accept: application/json
+
+### Neue Bestellung anlegen (Rezept zu Order hinzufügen)
+POST {{RecipeApi_HostAddress}}/orders?userName=testuser&quantity=2
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Spaghetti Bolognese",
+  "ingredients": [
+    { "name": "Spaghetti", "quantity": 200 },
+    { "name": "Hackfleisch", "quantity": 300 }
+  ]
+}
+
+### Bestellung bestätigen
+PUT {{RecipeApi_HostAddress}}/orders/1/confirm?userName=testuser
+
+### Bestellung abschließen und bewerten
+PUT {{RecipeApi_HostAddress}}/orders/1/finish?userName=testuser&rating=4.5
+
+### Offene Bestellung eines Nutzers abrufen
+GET {{RecipeApi_HostAddress}}/orders/pending?userName=testuser
+Accept: application/json

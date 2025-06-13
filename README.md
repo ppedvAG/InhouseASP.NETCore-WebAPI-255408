@@ -34,18 +34,19 @@ KursRepository zu Kurs ASP.NET Core Web API - RESTful Webservices mit C# der ppe
 	- ActionResults als JSON, XML und CSV
 -	[x] Best Practices: DTOs, Mapper
 -	[x] ModelState & Validation Attributes
+- 	[x] Fileserver absichern mittels Api Key in der Middleware 
 -	[ ] LAB: Movie Store Refactoring
 
 
 ## Modul 005 EF Core, Async/Await
 
--	[ ] Code First: Recipe Datenbank
--	[ ] Datenklasse mit Attriuten versetzt
--	[ ] DbContext & Seeding
--	[ ] Abhängigkeiten via DI registriert
--	[ ] Async/Await Pattern
--   [ ] LocalDB verwenden (Kommandozeile: `sqllocaldb create|start|stop|info <instanceName>`)
--	[ ] LAB: DB für Movie Store erstellen
+-	[x] Code First: Recipe Datenbank
+-	[x] Datenklasse mit Attriuten versetzt
+-	[x] DbContext & Seeding
+-	[x] Abhängigkeiten via DI registriert
+-	[x] Async/Await Pattern
+-   [x] LocalDB verwenden (Kommandozeile: `sqllocaldb create|start|stop|info <instanceName>`)
+-	[x] LAB: DB für Movie Store erstellen
 
 ```
 dotnet tool install --global dotnet-ef
