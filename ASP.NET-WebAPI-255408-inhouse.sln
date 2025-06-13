@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindAccess", "Northwin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindODataApi", "NorthwindODataApi\NorthwindODataApi.csproj", "{C6758FDF-8FE2-D8B1-D772-E2AB572927C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloOpenTelemetry", "HelloOpenTelemetry\HelloOpenTelemetry.csproj", "{EBBCD949-9201-94AC-7949-7482D3507F59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{C6758FDF-8FE2-D8B1-D772-E2AB572927C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6758FDF-8FE2-D8B1-D772-E2AB572927C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6758FDF-8FE2-D8B1-D772-E2AB572927C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBBCD949-9201-94AC-7949-7482D3507F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBBCD949-9201-94AC-7949-7482D3507F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBBCD949-9201-94AC-7949-7482D3507F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBBCD949-9201-94AC-7949-7482D3507F59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{01CFD10E-8FB0-576D-9362-34E06AFFCBFF} = {E2D532E3-6928-4CCA-9E28-640669515802}
 		{EEDA7BD4-526B-25C0-D628-08F969C1C011} = {9B1494ED-2806-4076-A7A4-27C961993D92}
 		{C6758FDF-8FE2-D8B1-D772-E2AB572927C5} = {9B1494ED-2806-4076-A7A4-27C961993D92}
+		{EBBCD949-9201-94AC-7949-7482D3507F59} = {6E0EE151-0A4A-48D1-834F-ADF072DC40CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B30CC79-2AB1-410B-BF3F-31B27BF8000C}

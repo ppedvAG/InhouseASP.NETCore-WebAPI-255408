@@ -1,0 +1,6 @@
+@HelloOpenTelemetry_HostAddress = http://localhost:5026
+
+GET {{HelloOpenTelemetry_HostAddress}}/weatherforecast/paris/5
+Accept: application/json
+
+###
