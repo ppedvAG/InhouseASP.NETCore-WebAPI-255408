@@ -1,9 +1,13 @@
 ﻿using BusinessLogic.Contracts;
+using BusinessLogic.Data;
 using BusinessLogic.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RecipeDbApi.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/v1/[controller]")]
     [ApiController]
     public class OrdersController : ControllerBase
@@ -39,6 +43,7 @@ namespace RecipeDbApi.Controllers
 
         // POST: api/Orders
         [HttpPost("{userName:alpha}/{recipeId:long}")]
+        [Authorize(Roles = Seed.USER_ROLE)]
         public async Task<ActionResult<Order>> PostOrder(string userName, long recipeId, [FromQuery] int quantity = 1)
         {
             var recipe = await _recipeService.GetById(recipeId);

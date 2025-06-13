@@ -1,7 +1,12 @@
 
 using BusinessLogic;
+using BusinessLogic.Contracts;
 using BusinessLogic.Data;
+using BusinessLogic.Models;
+using BusinessLogic.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Text.Json.Serialization;
 
 namespace RecipeDbApi
@@ -18,6 +23,39 @@ namespace RecipeDbApi
             // Alternative
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
             builder.Services.AddAppServices();
+
+            #region Identity
+
+            var jwtSettings = builder.Configuration.GetSection("Jwt");
+            builder.Services.Configure<JwtOptions>(jwtSettings);
+            builder.Services.AddTransient<ITokenService, JwtTokenService>();
+
+            // Registrierungen fuer Benutzerverwaltung
+            builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+            }).AddEntityFrameworkStores<ApplicationDbContext>();
+
+            var jwtOptions = jwtSettings.Get<JwtOptions>();
+
+            builder.Services.AddAuthentication(options =>
+            {
+
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtOptions.Issuer,
+                    ValidAudience = jwtOptions.Audience,
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(jwtOptions.SigningKey))
+                };
+            });
+
+            #endregion
 
             builder.Services.AddControllers()
                 .AddJsonOptions(options =>

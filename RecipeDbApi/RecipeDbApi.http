@@ -1,4 +1,31 @@
 @RecipeApi_HostAddress = http://localhost:5261/api/v1
+@token = ey
+
+POST {{RecipeApi_HostAddress}}/account/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "John Doe",
+  "password": "Syst3m"
+}
+
+###
+
+POST {{RecipeApi_HostAddress}}/account/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "John_Doe",
+  "email": "john.doe@example.com",
+  "password": "Syst3m"
+}
+
+### Alle Bestellungen eines Nutzers abrufen
+GET {{RecipeApi_HostAddress}}/orders?userName=Guest
+Authorization: Bearer {{token}}
+Accept: application/json
 
 ### Alle Rezepte abrufen
 GET {{RecipeApi_HostAddress}}/recipes

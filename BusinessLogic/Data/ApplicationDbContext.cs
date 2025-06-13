@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLogic.Data;
 
-public class ApplicationDbContext : IdentityDbContext
+public class ApplicationDbContext : IdentityDbContext<AppUser>
 {
     public DbSet<Recipe> Recipes { get; set; }
 
